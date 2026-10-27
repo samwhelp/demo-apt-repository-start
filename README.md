@@ -16,7 +16,43 @@
 
 ## Subject
 
+* [Usage](#usage)
 * [Link](#link)
+
+
+
+
+## Usage
+
+run
+
+``` sh
+make
+```
+
+or run
+
+``` sh
+make help
+```
+
+show
+
+```
+Usage:
+	$ make [action]
+
+Example:
+	$ make
+	$ make help
+
+	$ make prepare
+
+	$ make gpg-setup
+
+	$ make repo-update
+
+```
 
 
 
@@ -26,6 +62,7 @@
 | Link | GitHub |
 | ---- | ------ |
 | [demo-repository-ubuntu](https://samwhelp.github.io/demo-repository-ubuntu/) | [GitHub](https://github.com/samwhelp/demo-repository-ubuntu) |
+| [note-about-create-your-own-apt-repository](https://samwhelp.github.io/note-about-create-your-own-apt-repository/) | [GitHub](https://github.com/samwhelp/note-about-create-your-own-apt-repository) |
 
 
 

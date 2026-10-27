@@ -12,9 +12,9 @@ help:
 	@echo
 	@echo '	$$ make prepare'
 	@echo
-	@echo '	$$ make gpg'
+	@echo '	$$ make gpg-setup'
 	@echo
-	@echo '	$$ make update'
+	@echo '	$$ make repo-update'
 	@echo
 .PHONY: help
 
