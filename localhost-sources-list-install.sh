@@ -34,7 +34,7 @@ source "${BASE_DIR_PATH}/init.sh"
 
 function sys_localhost_sources_list_install () {
 
-	local repo_dir_path="$(pwd)/debian"
+	local repo_dir_path="${REPO_DIR_PATH}"
 
 	echo "mkdir -p /etc/apt/sources.list.d"
 	mkdir -p "/etc/apt/sources.list.d"
