@@ -34,6 +34,8 @@ source "${BASE_DIR_PATH}/init.sh"
 
 function sys_apt_sources_list_from_localfile_install () {
 
+	local repo_keyring_key_file_path="${REPO_KEYRING_KEY_FILE_PATH}"
+
 	local apt_sources_list_dir_path="${APT_SOURCES_LIST_DIR_PATH}"
 	local repo_sources_list_file_path="${REPO_SOURCES_LIST_FILE_PATH}"
 
@@ -43,9 +45,9 @@ function sys_apt_sources_list_from_localfile_install () {
 	echo "mkdir -p ${apt_sources_list_dir_path}"
 	mkdir -p "${apt_sources_list_dir_path}"
 
-	echo "echo \"deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] file://${repo_dir_path} ./\" | sudo tee \"${repo_sources_list_file_path}\""
+	echo "echo \"deb [signed-by=${repo_keyring_key_file_path}] file://${repo_dir_path} ./\" | sudo tee \"${repo_sources_list_file_path}\""
 	echo
-	echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] file://${repo_dir_path} ./" | sudo tee "${repo_sources_list_file_path}"
+	echo "deb [signed-by=${repo_keyring_key_file_path}] file://${repo_dir_path} ./" | sudo tee "${repo_sources_list_file_path}"
 
 }
 
