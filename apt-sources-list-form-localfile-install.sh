@@ -32,7 +32,7 @@ source "${BASE_DIR_PATH}/init.sh"
 ## Module
 ################################################################################
 
-function sys_local_sources_list_install () {
+function sys_apt_sources_list_from_localfile_install () {
 
 	local repo_dir_name="${REPO_DIR_NAME}"
 	local repo_dir_path="${REPO_DIR_PATH}"
@@ -46,9 +46,9 @@ function sys_local_sources_list_install () {
 
 }
 
-function mod_local_sources_list_install () {
+function mod_apt_sources_list_from_localfile_install () {
 
-	sys_local_sources_list_install
+	sys_apt_sources_list_from_localfile_install
 
 }
 
@@ -59,9 +59,9 @@ function mod_local_sources_list_install () {
 ## Model
 ################################################################################
 
-function model_local_sources_list_install () {
+function model_apt_sources_list_from_localfile_install () {
 
-	mod_local_sources_list_install
+	mod_apt_sources_list_from_localfile_install
 
 }
 
@@ -72,9 +72,9 @@ function model_local_sources_list_install () {
 ## Portal
 ################################################################################
 
-function portal_local_sources_list_install () {
+function portal_apt_sources_list_from_localfile_install () {
 
-	model_local_sources_list_install
+	model_apt_sources_list_from_localfile_install
 
 }
 
@@ -85,7 +85,7 @@ function portal_local_sources_list_install () {
 
 function __main__ () {
 
-	portal_local_sources_list_install
+	portal_apt_sources_list_from_localfile_install
 
 }
 
