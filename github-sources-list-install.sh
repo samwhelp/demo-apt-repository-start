@@ -34,13 +34,14 @@ source "${BASE_DIR_PATH}/init.sh"
 
 function sys_github_sources_list_install () {
 
+	local repo_dir_name="${REPO_DIR_NAME}"
 	local repo_dir_path="${REPO_DIR_PATH}"
 
 	echo "mkdir -p /etc/apt/sources.list.d"
 	mkdir -p "/etc/apt/sources.list.d"
 
 	echo 'echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/debian ./" | sudo tee "/etc/apt/sources.list.d/demo.list"'
-	echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/debian ./" | sudo tee "/etc/apt/sources.list.d/demo.list"
+	echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/${repo_dir_name} ./" | sudo tee "/etc/apt/sources.list.d/demo.list"
 
 }
 

@@ -35,7 +35,7 @@ source "${BASE_DIR_PATH}/init.sh"
 function sys_repo_packages_file_update () {
 
 	##
-	## ## Create 'debian/Packages'
+	## ## Create 'repo_dir_path/Packages'
 	##
 
 	echo 'dpkg-scanpackages --multiversion . > Packages'
@@ -52,7 +52,7 @@ function mod_repo_packages_file_update () {
 function sys_repo_packages_file_compress () {
 
 	##
-	## ## Create 'debian/Packages.gz'
+	## ## Create 'repo_dir_path/Packages.gz'
 	##
 
 	echo "gzip -k -f Packages"
@@ -63,7 +63,7 @@ function sys_repo_packages_file_compress () {
 function sys_repo_packages_file_compress_v2 () {
 
 	##
-	## ## Create 'debian/Packages.gz'
+	## ## Create 'repo_dir_path/Packages.gz'
 	##
 
 	echo "gzip -k -f -n Packages"
@@ -82,7 +82,7 @@ function mod_repo_packages_file_compress () {
 function sys_repo_release_file_update () {
 
 	##
-	## ## Create 'debian/Release'
+	## ## Create 'repo_dir_path/Release'
 	##
 
 	echo 'apt-ftparchive release . > Release'
@@ -99,7 +99,7 @@ function mod_repo_release_file_update () {
 function sys_repo_release_file_gpg () {
 
 	##
-	## ## Create 'debian/Release.gpg'
+	## ## Create 'repo_dir_path/Release.gpg'
 	##
 
 	local key_id="${1}"
@@ -121,7 +121,7 @@ function mod_repo_release_file_gpg () {
 function sys_repo_release_file_gpg_sign () {
 
 	##
-	## ## Create 'debian/InRelease'
+	## ## Create 'repo_dir_path/InRelease'
 	##
 
 	local key_id="${1}"

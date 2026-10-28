@@ -34,11 +34,14 @@ source "${BASE_DIR_PATH}/init.sh"
 
 function sys_local_keyring_install () {
 
+	local repo_dir_name="${REPO_DIR_NAME}"
+	local repo_dir_path="${REPO_DIR_PATH}"
+
 	echo "mkdir -p /usr/share/keyrings"
 	mkdir -p "/usr/share/keyrings"
 
-	echo "cat debian/key.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/demo-archive-keyring.gpg"
-	cat "debian/key.asc" | sudo gpg --yes --dearmor --output "/usr/share/keyrings/demo-archive-keyring.gpg"
+	echo "cat ${repo_dir_path}/key.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/demo-archive-keyring.gpg"
+	cat "${repo_dir_path}/key.asc" | sudo gpg --yes --dearmor --output "/usr/share/keyrings/demo-archive-keyring.gpg"
 
 }
 
