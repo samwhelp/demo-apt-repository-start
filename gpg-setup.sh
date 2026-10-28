@@ -130,6 +130,14 @@ function mod_gpg_key_fingerprint () {
 ## Model
 ################################################################################
 
+function model_prepare () {
+
+	local repo_dir_path="${REPO_DIR_PATH}"
+
+	mkdir -p "${repo_dir_path}"
+
+}
+
 function model_gpg_key_setup () {
 
 	if mod_gpg_secret_key_exist; then
@@ -171,6 +179,8 @@ function model_gpg_key_setup () {
 ################################################################################
 
 function portal_gpg_key_setup () {
+
+	model_prepare
 
 	model_gpg_key_setup
 
