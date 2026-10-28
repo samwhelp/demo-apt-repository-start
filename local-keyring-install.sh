@@ -32,7 +32,7 @@ source "${BASE_DIR_PATH}/init.sh"
 ## Module
 ################################################################################
 
-function sys_local_keyring_install () {
+function sys_keyring_key_install () {
 
 	local keyrings_dir_path="${KEYRINGS_DIR_PATH}"
 
@@ -45,13 +45,14 @@ function sys_local_keyring_install () {
 	mkdir -p "${keyrings_dir_path}"
 
 	echo "cat ${repo_public_key_file_path} | sudo gpg --yes --dearmor --output ${repo_keyring_key_file_path}"
+	echo
 	cat "${repo_public_key_file_path}" | sudo gpg --yes --dearmor --output "${repo_keyring_key_file_path}"
 
 }
 
-function mod_local_keyring_install () {
+function mod_keyring_key_install () {
 
-	sys_local_keyring_install
+	sys_keyring_key_install
 
 }
 
@@ -62,9 +63,9 @@ function mod_local_keyring_install () {
 ## Model
 ################################################################################
 
-function model_local_keyring_install () {
+function model_keyring_key_install () {
 
-	mod_local_keyring_install
+	mod_keyring_key_install
 
 }
 
@@ -75,9 +76,9 @@ function model_local_keyring_install () {
 ## Portal
 ################################################################################
 
-function portal_local_keyring_install () {
+function portal_keyring_key_install () {
 
-	model_local_keyring_install
+	model_keyring_key_install
 
 }
 
@@ -88,7 +89,7 @@ function portal_local_keyring_install () {
 
 function __main__ () {
 
-	portal_local_keyring_install
+	portal_keyring_key_install
 
 }
 
