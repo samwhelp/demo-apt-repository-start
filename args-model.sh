@@ -4,5 +4,5 @@
 ## Args / Key
 ################################################################################
 
-KEY_EMAIL="demorepo@home.com"
-KEY_NAME="DemoRepo"
+KEY_EMAIL="${subject_id}repo@home.com"
+KEY_NAME="${subject_name}Repo"
