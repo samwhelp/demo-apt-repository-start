@@ -48,3 +48,13 @@ REPO_PUBLIC_KEY_FILE_PATH="${REPO_DIR_PATH}/${REPO_PUBLIC_KEY_FILE_NAME}"
 
 REPO_KEYRING_KEY_FILE_NAME="demo-archive-keyring.gpg"
 REPO_KEYRING_KEY_FILE_PATH="${KEYRINGS_DIR_PATH}/${REPO_KEYRING_KEY_FILE_NAME}"
+
+
+
+
+################################################################################
+## Path / Model / Apt
+################################################################################
+
+APT_SOURCES_LIST_DIR_NAME="sources.list.d"
+APT_SOURCES_LIST_DIR_PATH="/etc/apt/${APT_SOURCES_LIST_DIR_NAME}"
