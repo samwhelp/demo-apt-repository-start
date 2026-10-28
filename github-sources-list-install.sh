@@ -40,7 +40,8 @@ function sys_github_sources_list_install () {
 	echo "mkdir -p /etc/apt/sources.list.d"
 	mkdir -p "/etc/apt/sources.list.d"
 
-	echo 'echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/debian ./" | sudo tee "/etc/apt/sources.list.d/demo.list"'
+	echo "echo \"deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/${repo_dir_name} ./\" | sudo tee \"/etc/apt/sources.list.d/demo.list\""
+	echo
 	echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/${repo_dir_name} ./" | sudo tee "/etc/apt/sources.list.d/demo.list"
 
 }
