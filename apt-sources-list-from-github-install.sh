@@ -32,7 +32,7 @@ source "${BASE_DIR_PATH}/init.sh"
 ## Module
 ################################################################################
 
-function sys_localhost_sources_list_install () {
+function sys_apt_sources_list_from_github_install () {
 
 	local repo_dir_name="${REPO_DIR_NAME}"
 	local repo_dir_path="${REPO_DIR_PATH}"
@@ -40,15 +40,15 @@ function sys_localhost_sources_list_install () {
 	echo "mkdir -p /etc/apt/sources.list.d"
 	mkdir -p "/etc/apt/sources.list.d"
 
-	echo "echo \"deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] http://localhost:8080/${repo_dir_name} ./\" | sudo tee \"/etc/apt/sources.list.d/demo.list\""
+	echo "echo \"deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/${repo_dir_name} ./\" | sudo tee \"/etc/apt/sources.list.d/demo.list\""
 	echo
-	echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] http://localhost:8080/${repo_dir_name} ./" | sudo tee "/etc/apt/sources.list.d/demo.list"
+	echo "deb [signed-by=/usr/share/keyrings/demo-archive-keyring.gpg] https://samwhelp.github.io/demo-apt-repository-start/${repo_dir_name} ./" | sudo tee "/etc/apt/sources.list.d/demo.list"
 
 }
 
-function mod_localhost_sources_list_install () {
+function mod_apt_sources_list_from_github_install () {
 
-	sys_localhost_sources_list_install
+	sys_apt_sources_list_from_github_install
 
 }
 
@@ -59,9 +59,9 @@ function mod_localhost_sources_list_install () {
 ## Model
 ################################################################################
 
-function model_localhost_sources_list_install () {
+function model_apt_sources_list_from_github_install () {
 
-	mod_localhost_sources_list_install
+	mod_apt_sources_list_from_github_install
 
 }
 
@@ -72,9 +72,9 @@ function model_localhost_sources_list_install () {
 ## Portal
 ################################################################################
 
-function portal_localhost_sources_list_install () {
+function portal_apt_sources_list_from_github_install () {
 
-	model_localhost_sources_list_install
+	model_apt_sources_list_from_github_install
 
 }
 
@@ -85,7 +85,7 @@ function portal_localhost_sources_list_install () {
 
 function __main__ () {
 
-	portal_localhost_sources_list_install
+	portal_apt_sources_list_from_github_install
 
 }
 
