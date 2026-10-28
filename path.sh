@@ -22,7 +22,8 @@ PLAN_DIR_PATH="${BASE_DIR_PATH}"
 ## Path / Model / Repo
 ################################################################################
 
-REPO_DIR_PATH="${PLAN_DIR_PATH}/debian"
+REPO_DIR_NAME="debian"
+REPO_DIR_PATH="${PLAN_DIR_PATH}/${REPO_DIR_NAME}"
 
 
 
