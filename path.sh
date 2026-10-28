@@ -31,4 +31,5 @@ REPO_DIR_PATH="${PLAN_DIR_PATH}/${REPO_DIR_NAME}"
 ## Path / Model / Key
 ################################################################################
 
-REPO_PUBLIC_KEY_FILE_PATH="${REPO_DIR_PATH}/key.asc"
+REPO_PUBLIC_KEY_FILE_NAME="key.asc"
+REPO_PUBLIC_KEY_FILE_PATH="${REPO_DIR_PATH}/${REPO_PUBLIC_KEY_FILE_NAME}"
