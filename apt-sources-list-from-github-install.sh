@@ -42,12 +42,14 @@ function sys_apt_sources_list_from_github_install () {
 	local repo_dir_name="${REPO_DIR_NAME}"
 	local repo_dir_path="${REPO_DIR_PATH}"
 
+	local website_top_url="${WEBSITE_TOP_URL_GITHUB}"
+
 	echo "mkdir -p ${apt_sources_list_dir_path}"
 	mkdir -p "${apt_sources_list_dir_path}"
 
-	echo "echo \"deb [signed-by=${repo_keyring_key_file_path}] https://samwhelp.github.io/demo-apt-repository-start/${repo_dir_name} ./\" | sudo tee \"${repo_sources_list_file_path}\""
+	echo "echo \"deb [signed-by=${repo_keyring_key_file_path}] ${website_top_url}/${repo_dir_name} ./\" | sudo tee \"${repo_sources_list_file_path}\""
 	echo
-	echo "deb [signed-by=${repo_keyring_key_file_path}] https://samwhelp.github.io/demo-apt-repository-start/${repo_dir_name} ./" | sudo tee "${repo_sources_list_file_path}"
+	echo "deb [signed-by=${repo_keyring_key_file_path}] ${website_top_url}/${repo_dir_name} ./" | sudo tee "${repo_sources_list_file_path}"
 
 }
 
