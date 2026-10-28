@@ -34,8 +34,10 @@ source "${BASE_DIR_PATH}/init.sh"
 
 function sys_apt_sources_list_remove () {
 
-	echo 'sudo rm -f "/etc/apt/sources.list.d/demo.list"'
-	sudo rm -f "/etc/apt/sources.list.d/demo.list"
+	local repo_sources_list_file_path="${REPO_SOURCES_LIST_FILE_PATH}"
+
+	echo "sudo rm -f ${repo_sources_list_file_path}"
+	sudo rm -f "${repo_sources_list_file_path}"
 
 }
 
