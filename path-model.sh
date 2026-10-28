@@ -49,3 +49,13 @@ APT_SOURCES_LIST_DIR_PATH="/etc/apt/${APT_SOURCES_LIST_DIR_NAME}"
 
 REPO_SOURCES_LIST_FILE_NAME="${subject_id}.list"
 REPO_SOURCES_LIST_FILE_PATH="${APT_SOURCES_LIST_DIR_PATH}/${REPO_SOURCES_LIST_FILE_NAME}"
+
+
+
+
+################################################################################
+## Path / Model / Website
+################################################################################
+
+WEBSITE_TOP_URL_LOCALHOST="http://localhost:8080"
+WEBSITE_TOP_URL_GITHUB="https://samwhelp.github.io/demo-apt-repository-start"
