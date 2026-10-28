@@ -34,14 +34,18 @@ source "${BASE_DIR_PATH}/init.sh"
 
 function sys_local_keyring_install () {
 
-	local repo_dir_name="${REPO_DIR_NAME}"
-	local repo_dir_path="${REPO_DIR_PATH}"
+	local keyrings_dir_path="${KEYRINGS_DIR_PATH}"
 
-	echo "mkdir -p /usr/share/keyrings"
-	mkdir -p "/usr/share/keyrings"
+	local repo_keyring_key_file_path="${REPO_KEYRING_KEY_FILE_PATH}"
 
-	echo "cat ${repo_dir_path}/key.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/demo-archive-keyring.gpg"
-	cat "${repo_dir_path}/key.asc" | sudo gpg --yes --dearmor --output "/usr/share/keyrings/demo-archive-keyring.gpg"
+	local repo_public_key_file_path="${REPO_PUBLIC_KEY_FILE_PATH}"
+
+
+	echo "mkdir -p ${keyrings_dir_path}"
+	mkdir -p "${keyrings_dir_path}"
+
+	echo "cat ${repo_public_key_file_path} | sudo gpg --yes --dearmor --output ${repo_keyring_key_file_path}"
+	cat "${repo_public_key_file_path}" | sudo gpg --yes --dearmor --output "${repo_keyring_key_file_path}"
 
 }
 
