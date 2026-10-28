@@ -32,16 +32,16 @@ source "${BASE_DIR_PATH}/init.sh"
 ## Module
 ################################################################################
 
-function sys_local_sources_list_remove () {
+function sys_apt_sources_list_remove () {
 
 	echo 'sudo rm -f "/etc/apt/sources.list.d/demo.list"'
 	sudo rm -f "/etc/apt/sources.list.d/demo.list"
 
 }
 
-function mod_local_sources_list_remove () {
+function mod_apt_sources_list_remove () {
 
-	sys_local_sources_list_remove
+	sys_apt_sources_list_remove
 
 }
 
@@ -52,9 +52,9 @@ function mod_local_sources_list_remove () {
 ## Model
 ################################################################################
 
-function model_local_sources_list_remove () {
+function model_apt_sources_list_remove () {
 
-	mod_local_sources_list_remove
+	mod_apt_sources_list_remove
 
 }
 
@@ -65,9 +65,9 @@ function model_local_sources_list_remove () {
 ## Portal
 ################################################################################
 
-function portal_local_sources_list_remove () {
+function portal_apt_sources_list_remove () {
 
-	model_local_sources_list_remove
+	model_apt_sources_list_remove
 
 }
 
@@ -78,7 +78,7 @@ function portal_local_sources_list_remove () {
 
 function __main__ () {
 
-	portal_local_sources_list_remove
+	portal_apt_sources_list_remove
 
 }
 
