@@ -43,8 +43,15 @@ function sys_website_serve_by_python () {
 
 function sys_website_serve_by_php () {
 
-	echo "php -S localhost:8080"
-	php -S localhost:8080
+	local website_localhost_name="${WEBSITE_LOCALHOST_NAME}"
+	local website_localhost_port="${WEBSITE_LOCALHOST_PORT}"
+
+	WEBSITE_LOCALHOST_NAME="localhost"
+	WEBSITE_LOCALHOST_PORT="8080"
+
+	echo "php -S ${website_localhost_name}:${website_localhost_port}"
+	echo
+	php -S "${website_localhost_name}:${website_localhost_port}"
 
 }
 

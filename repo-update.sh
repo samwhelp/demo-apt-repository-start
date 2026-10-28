@@ -167,6 +167,8 @@ function model_repo_update () {
 
 	local repo_dir_path="${REPO_DIR_PATH}"
 
+	mkdir -p "${repo_dir_path}"
+
 	pushd "${repo_dir_path}" > /dev/null
 
 	module_repo_update
