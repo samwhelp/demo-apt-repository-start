@@ -32,7 +32,7 @@ source "${BASE_DIR_PATH}/init.sh"
 ## Module
 ################################################################################
 
-function sys_serve_by_python () {
+function sys_website_serve_by_python () {
 
 	echo "python3 -m http.server"
 	python3 -m http.server
@@ -41,18 +41,18 @@ function sys_serve_by_python () {
 
 
 
-function sys_serve_by_php () {
+function sys_website_serve_by_php () {
 
 	echo "php -S localhost:8080"
 	php -S localhost:8080
 
 }
 
-function mod_serve () {
+function mod_website_serve () {
 
-	#sys_serve_by_python
+	#sys_website_serve_by_python
 
-	sys_serve_by_php
+	sys_website_serve_by_php
 
 }
 
@@ -63,9 +63,9 @@ function mod_serve () {
 ## Model
 ################################################################################
 
-function model_serve () {
+function model_website_serve () {
 
-	mod_serve
+	mod_website_serve
 
 }
 
@@ -76,9 +76,9 @@ function model_serve () {
 ## Portal
 ################################################################################
 
-function portal_serve () {
+function portal_website_serve () {
 
-	model_serve
+	model_website_serve
 
 }
 
@@ -89,7 +89,7 @@ function portal_serve () {
 
 function __main__ () {
 
-	portal_serve
+	portal_website_serve
 
 }
 
